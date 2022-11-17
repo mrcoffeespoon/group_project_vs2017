@@ -67,5 +67,5 @@ private:
 	int Year;
 	int Month;
 	int Day;
-	int last_day;       // last day of the month
+	int last_day = 30;       // last day of the month
 };
