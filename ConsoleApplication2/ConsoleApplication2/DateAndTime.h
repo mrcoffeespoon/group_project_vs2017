@@ -50,9 +50,10 @@ public:
 		if (d > last_day) {
 			d = 1;
 			m += 1;
-			if (m > 12)
+			if (m > 12){
 				m = 1;
-			y++;
+				y++;
+			}
 		}
 		Date next(y, m, d);
 		return next;
