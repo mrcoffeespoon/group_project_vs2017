@@ -4,18 +4,18 @@
 class Reserve_Data {
 public:
 	Reserve_Data() {}
-	Reserve_Data(char room, unsigned int Max_Capacity,
+	Reserve_Data(char room, unsigned int no_Participants,
 		Date Booked_date, int Start_time, int End_time) {
-		SetData(room, Max_Capacity, Booked_date, Start_time, End_time);
+		SetData(room, no_Participants, Booked_date, Start_time, End_time);
 		Cal_Cost();
 	}
 	explicit Reserve_Data(const Reserve_Data &rhs){	
-		SetData(rhs.R_room, rhs.R_Max_Capacity, rhs.R_date, rhs.R_Start_time, rhs.R_End_time);
+		SetData(rhs.R_room, rhs.R_no_Participants, rhs.R_date, rhs.R_Start_time, rhs.R_End_time);
 	}
 	~Reserve_Data() {
 
 	}
-	inline Reserve_Data operator = (const Reserve_Data &rhs){ SetData(rhs.R_room, rhs.R_Max_Capacity, rhs.R_date, rhs.R_Start_time, rhs.R_End_time); }
+	inline Reserve_Data operator = (const Reserve_Data &rhs){ SetData(rhs.R_room, rhs.R_no_Participants, rhs.R_date, rhs.R_Start_time, rhs.R_End_time); }
 
 	void SetData(char room, unsigned int Max_Capacity,
 		Date Booked_date, int Start_time, int End_time)
@@ -24,7 +24,7 @@ public:
 		R_date = Booked_date;
 		R_Start_time = Start_time;
 		R_End_time = End_time;
-		R_Max_Capacity = Max_Capacity;
+		R_no_Participants = no_Participants;
 
 	}
 
@@ -43,7 +43,7 @@ public:
 		R_room = newRoom;
 		Cal_Cost();
 	}
-	void alterMax_Capacity(int new_max) { R_Max_Capacity = new_max; }
+	void alterno_Participants(int new_no) { R_no_Participants = new_no; }
 	void alterStart_time(int New_startTime) { R_Start_time = New_startTime; }
 	void alterEnd_time(int New_EndTime) { R_End_time = New_EndTime; }
 	void alterDuration(int start, int End) { R_Start_time = start; R_End_time = End; Cal_Cost(); }
@@ -53,7 +53,7 @@ public:
 
 private:
 	char R_room;                    //reserved room
-	unsigned int R_Max_Capacity;
+	unsigned int R_no_Participants;
 	Date R_date;
 	int R_Start_time;
 	int R_End_time;
