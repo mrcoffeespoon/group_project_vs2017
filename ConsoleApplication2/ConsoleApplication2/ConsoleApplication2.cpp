@@ -79,7 +79,7 @@ protected:
 		}
 
 		//confirm
-		if (Confirm_Change(data))
+		if (data.confirm())
 			reserve_datas.push_back(data);          //finish reservation
 	}                               //R1.3
 	void  Modify_Reservation() {
