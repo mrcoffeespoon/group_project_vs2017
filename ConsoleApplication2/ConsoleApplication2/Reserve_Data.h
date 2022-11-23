@@ -38,7 +38,10 @@ public:
 
 
 	} //print the Data as R1.7.
-
+	bool confirm(){
+	
+	
+	}
 	void alterDate(Date newdate) { R_date = newdate; }
 	void alterRoom(char newRoom) {
 		R_room = newRoom;
