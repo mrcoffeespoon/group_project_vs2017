@@ -10,11 +10,19 @@
 #include"DateAndTime.h"
 #include"Reserve_Data.h"
 #include<vector>
+#include <iomapic>
 using namespace std;
 
 
 
-
+inline void print_hours(int hours,int mins=0){
+	if(hour<10)cout<<'0'<<hour;
+	else cout<<hour;
+	cout<<':';
+	if(mins=0)cout<<"00";
+	else if(mins<10)cout<<'0'<<mins;
+	else cout<<mins;
+}
 class BookingSystem {
 public:
 	BookingSystem() {
@@ -93,8 +101,8 @@ protected:
 	}
 
 	void Show_Reservation_Record() {
-
-	}
+	
+	}//R.2
 
 	void Show_Staff_Requirements() {
 
