@@ -44,7 +44,7 @@ public:
 		return  a;
 	}
 	void print_date(){
-		cout<< th.Day << '-' << th.Month << '-' << th.Year;
+		cout<< Day << '-' << Month << '-' << Year;
 	}
 	
 
