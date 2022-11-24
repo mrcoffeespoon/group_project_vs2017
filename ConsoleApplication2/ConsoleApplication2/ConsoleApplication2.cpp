@@ -50,11 +50,12 @@ protected:
 		cin >> x;
 		switch (x) {
 		case 1:
-			Reservation();
+			Reservation_menu();
 			break;                                          //continue.........
 
 		}
 	}
+	void Reservation_menu(){}
 	void Reservation() {
 		//get data (cin>>)
 		Reserve_Data data;                //use data.set(xxx) to set data
