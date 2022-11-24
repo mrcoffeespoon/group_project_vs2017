@@ -26,6 +26,7 @@ inline void print_time(int hours,int mins=0){
 class BookingSystem {
 public:
 	BookingSystem() {
+		BookingSystem() {
 		time_t t = time(0);
 		localtime_s(&now, &t);
 		Date temp;
@@ -33,6 +34,11 @@ public:
 		date[0] = Date(now.tm_year + 1900, now.tm_mon + 1, now.tm_mday);
 		for (int i = 1; i < 8; i++)
 			date[i] = date[i - 1].nextday();
+		for (int i = 0; i < 3; i++)
+			for (int j = 0; j < 7; j++)
+				for (int k = 0; k < 13; k++)
+					timetable[i][j][k] = 0;
+	}
 	}
 	~BookingSystem() {
 		delete[] date;
@@ -111,7 +117,7 @@ protected:
 		for (i = 0; i < 13; i++) {
 			print_time(i + 9);
 			cout << "  ";
-			for (int j = 1; j <= 7; j++)
+			for (int j = 0; j < 7; j++)
 			{
 				if (timetable[x][j][i] > 0)
 					cout << "  x    ";
