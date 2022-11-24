@@ -16,8 +16,8 @@ using namespace std;
 
 
 inline void print_time(int hours,int mins=0){
-	if(hour<10)cout<<'0'<<hour;
-	else cout<<hour;
+	if(hours<10)cout<<'0'<<hours;
+	else cout<<hours;
 	cout<<':';
 	if(mins=0)cout<<"00";
 	else if(mins<10)cout<<'0'<<mins;
