@@ -100,22 +100,11 @@ protected:
 
 	}
 
-	void Show_Reservation_Record() {
-		cout << "*** Reservation Record ***\n" <<
-			"Display Which Room (A - C):" << endl;
-		char c;				//choice
-		cin >> c;
-		int x;
-		if (c == 'A')x = 1;
-		else if (c == 'B')x = 2;
-		else if (c == 'C')x = 3;
-		else return;
-		
-
+	void print_record(int x){
 		cout << setw(6) << left << ' ';
 		int i;
 		for (i = 1; i <= 7; i++) {
-			cout<< date[i]<<"  ";
+			cout << date[i] << "  ";
 		}
 		cout << endl;
 
@@ -130,7 +119,25 @@ protected:
 			}
 			cout << endl;
 		}
-	}// R.2
+
+	}
+
+	void Show_Reservation_Record() {
+		cout << "*** Reservation Record ***\n" <<
+			"Display Which Room (A - C):" << endl;
+		char c =' ';
+		while (1) {
+			cin >> c;
+			if (c == 'A')print_record(1);
+			else if (c == 'B')print_record(2);
+			else if (c == 'C')print_record(3);
+			else if (c == 'x' || c == 'X')break;
+			else cout << "invalid input" << endl;;
+
+			cout <<"Option(A - C), X to exit :";
+		}
+	
+	}//R.2
 	
 	void Show_Staff_Requirements() {
 
