@@ -35,7 +35,7 @@ public:
 		if(th.Month<10)
 			a<<'0'<<th.Month;
 		else a<<th.Month;
-		
+		a<<'/';
 		if( th.Day < 10)
 			a <<'0'<<th.Day;
 		else 
