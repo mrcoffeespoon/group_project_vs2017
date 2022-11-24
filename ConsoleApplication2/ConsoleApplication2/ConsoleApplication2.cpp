@@ -106,7 +106,12 @@ protected:
 
 	}
 
-	void print_record(int x){
+	void print_record(char c){
+		cout << "\nRoom " << c << "\n\n";
+		int x;
+		if (c == 'A')x = 0;
+		else if (c == 'B')x = 1;
+		else x = 2;
 		cout << setw(6) << left << ' ';
 		int i;
 		for (i = 1; i <= 7; i++) {
@@ -134,12 +139,11 @@ protected:
 		char c =' ';
 		while (1) {
 			cin >> c;
-			if (c == 'A')print_record(1);
-			else if (c == 'B')print_record(2);
-			else if (c == 'C')print_record(3);
+			if (c == 'A')print_record('A');
+			else if (c == 'B')print_record('B');
+			else if (c == 'C')print_record('C');
 			else if (c == 'x' || c == 'X')break;
-			else cout << "invalid input" << endl;;
-
+			else cout << "invalid input" << endl;
 			cout <<"Option(A - C), X to exit :";
 		}
 	
