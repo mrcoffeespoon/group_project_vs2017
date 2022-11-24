@@ -32,9 +32,21 @@ public:
 	}
 	friend ostream& operator<<(ostream &a, const Date &th)
 	{
-		a << th.Day << '-' << th.Month << '-' << th.Year;
+		if(th.Month<10)
+			a<<'0'<<th.Month;
+		else a<<th.Month;
+		
+		if( th.Day < 10)
+			a <<'0'<<th.Day;
+		else 
+			a<<th.Day;
+		
 		return  a;
 	}
+	void print_date(){
+		cout<< th.Day << '-' << th.Month << '-' << th.Year;
+	}
+	
 
 	void setdate(int year, int month, int day) {
 		Year = year;
