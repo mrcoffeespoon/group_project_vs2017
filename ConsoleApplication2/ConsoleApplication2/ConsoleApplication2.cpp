@@ -15,7 +15,7 @@ using namespace std;
 
 
 
-inline void print_hours(int hours,int mins=0){
+inline void print_time(int hours,int mins=0){
 	if(hour<10)cout<<'0'<<hour;
 	else cout<<hour;
 	cout<<':';
@@ -101,7 +101,34 @@ protected:
 	}
 
 	void Show_Reservation_Record() {
-	
+		cout<<"*** Reservation Record ***\n"<<
+		"Display Which Room (A - C):"<<endl;
+		char c;				//choice
+		cin>>c;
+		int x;
+		if(c=='A')x=1;
+		else if(c=='B')x=2;
+		else if(c=='C')x=3;
+		
+		cout<<setw(6)<<left<<' ';
+		int i;
+		for(i = 1;i<=7;i++){
+			cout<<setw(6)<<date[i];
+		}
+		cout<<endl;
+		
+		for(i = 0;i<13;i++){
+			cout<<setw(6);
+			print_time(i+9);
+			
+			for(int j=1; j<=7;j++)
+			{	
+				if(timetable[x][j][i] >0)
+					cout<<"  x    ";
+				else cout<<"      ";
+			}
+			cout<<endl;
+		}
 	}//R.2
 
 	void Show_Staff_Requirements() {
