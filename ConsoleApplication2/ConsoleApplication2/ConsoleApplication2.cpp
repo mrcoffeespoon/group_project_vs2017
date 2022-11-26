@@ -82,20 +82,19 @@ protected:
 		//check vaild
 		if (1)                      // if no Room available
 		{
-			vector<int>* suggest = get_suggest(End - Start, Start);
+			int suggest = get_suggest(End - Start, Start);
 			cout << "***Reservation *** \n"
 				<< "Sorry, no room is available at the time slot.\n"
 				<< "Suggestions:" << endl;
-			for (int i = 0; i < suggest->size(); i++) {
-
-			}
-
-			delete suggest;
 		}
 
 		//confirm
-		if (data.confirm())
+		if (data.confirm()){
 			reserve_datas.push_back(data);          //finish reservation
+			for(int i = Start-9; i<End-9 ;i++){
+				
+			} //scheduling
+		}
 	}                               //R1.3
 	void  Modify_Reservation() {
 
@@ -169,8 +168,8 @@ private:
 	}
 
 
-	inline vector<int>* get_suggest(int duration, int conf_time_Start) {
-		vector<int>* suggestion = new vector<int>;
+	inline int get_suggestion(int duration, int conf_time_Start) {
+		int suggestion;
 
 
 		return suggestion;
