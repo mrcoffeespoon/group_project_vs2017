@@ -74,7 +74,26 @@ public:
 
 private:
 	void find_lastday() {
+	int d = Day;
+	int m = Month;
+	int y = Year;
 
+	if (Month == 1 || Month == 3 || Month == 5 || Month == 7 || Month == 8 || Month == 10 || Month == 12) {
+		d = 31;
+	}
+	else if (Month == 4 || Month == 6 || Month == 9 || Month == 11) {
+		d = 30;
+	}
+	else if (Month == 2) {
+		if ((Year % 400 == 0 && Year % 100 != 0)||(Year %4==0 && Year %100 !=0)) {
+			d = 29;
+
+		}
+		else if ((Year % 4 != 0) || (Year % 400 != 0 && Year % 100 == 0 && Year % 4 == 0)) {
+			d = 28;
+		}
+		else d = 0;
+		
 
 	}
 	int Year;
