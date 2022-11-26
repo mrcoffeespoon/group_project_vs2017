@@ -38,10 +38,10 @@ public:
 
 
 	} //print the Data as R1.7.
-	bool confirm(){
+	int get_start_time(){return R_Start_time;}
+	int get_End_time(){return R_End_time;}
 	
 	
-	}
 	void alterPerson(string name){R_person = name;}
 	void alterAddress(string address){R_address = address;}
 	void alterphoneNo(int num){R_Phone_no = num;}
