@@ -151,6 +151,51 @@ protected:
 	
 	void Show_Staff_Requirements() {
 
+
+	string date;
+	string reply;
+
+
+	string X;
+	
+	
+	cout << "*** Staff Requirement ***" << endl;
+	cout << "Enter the Date(dd / mm / yyyy) or X to exit" << endl;
+	
+	cin >> reply;
+
+	if (reply == X) {
+		cout << "return";
+	}
+	else
+	{
+		const int SIZE = 39;
+		int r3time = 10;
+		int r3staff[SIZE];
+		int r3manager[SIZE];
+
+		for (int i = 0; i < SIZE; i++) {
+			r3staff[i] = 1;
+			r3manager[i] = 2;
+
+		}
+		cout << "00:00" << setw(10) << "CR A" << setw(10) << "CR B" << setw(10) << "CR C" << setw(10) << "TOTAL" << endl;
+		cout << "09:00" << setw(7) << r3manager[1] << "M " << r3staff[1] << "S"
+			<< setw(6) << r3manager[2] << "M " << r3staff[2] << "S"
+			<< setw(6) << r3manager[3] << "M " << r3staff[3] << "S"
+			<< setw(5) << r3manager[1] + r3manager[2] + r3manager[3] << "M " << r3staff[1] + r3staff[2] + r3staff[3] << "S" << endl;
+
+		for (int i = 4; i < SIZE; i += 3) {
+			cout << r3time << ":00"
+				<< setw(7) << r3manager[i] << "M " << r3staff[i] << "S"
+				<< setw(6) << r3manager[i + 1] << "M " << r3staff[2] << "S"
+				<< setw(6) << r3manager[i + 2] << "M " << r3staff[3] << "S"
+				<< setw(5) << r3manager[i] + r3manager[i + 1] + r3manager[i + 2] << "M " << r3staff[i] + r3staff[i + 1] + r3staff[i + 2] << "S" << endl;
+
+			r3time += 1;
+		}
+	}
+
 	}
 
 private:
